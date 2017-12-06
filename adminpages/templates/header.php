@@ -65,20 +65,20 @@
 				   <li><a href="#"><i class="fa fa-money"></i> Penjualan </a></li>
 				    <li><a href="#"><i class="fa fa-user"></i> User </a></li>
 					<li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
-				
+
 				<?php } else { ?>
-                  <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
-				   <li><a href="<?php echo $admin_url; ?>kategori/main.php"><i class="fa fa-th"></i> Kategori </a></li>
-				    <li><a href="<?php echo $admin_url; ?>produk/main.php"><i class="fa fa-camera"></i> Produk </a></li>
-					
-					          <li><a href="#"><i class="fa fa-cc"></i> Order </a></li>
-				   <li><a href="#"><i class="fa fa-money"></i> Penjualan </a></li>
-				    <li><a href="#"><i class="fa fa-user"></i> User </a></li>
+          <li><a href="<?php echo $admin_url; ?>home/main.php"><i class="fa fa-home"></i> Home </a></li>
+				  <li><a href="<?php echo $admin_url; ?>kategori/main.php"><i class="fa fa-th"></i> Kategori </a></li>
+				  <li><a href="<?php echo $admin_url; ?>produk/main.php"><i class="fa fa-camera"></i> Produk </a></li>
+
+					<li><a href="<?php echo $admin_url; ?>order/main.php"><i class="fa fa-cc"></i> Order </a></li>
+				  <li><a href="<?php echo $admin_url; ?>penjualan/main.php"><i class="fa fa-money"></i> Penjualan </a></li>
+				  <li><a href="<?php echo $admin_url; ?>user/main.php"><i class="fa fa-user"></i> User </a></li>
 					<li><a href="../logout.php"><i class="fa fa-sign-out"></i> LogOut </a></li>
 				<?php } ?>
                 </ul>
               </div>
-              
+
 
             </div>
             <!-- /sidebar menu -->
@@ -129,7 +129,7 @@
                   </ul>
                 </li>
 
-                
+
               </ul>
             </nav>
           </div>
