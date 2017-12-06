@@ -1,0 +1,78 @@
+.my-account-head {
+	margin: 94px 0 60px;
+}
+.my-account-block {
+	border-top: solid 2px #ededed;
+	border-bottom: solid 2px #ededed;
+}
+.left-col,
+.right-col {
+	padding-top: 60px;
+	padding-bottom: 72px;
+	h2:first-child {
+		display: block;
+		width: 100%;
+		font-size: 26px;
+		color: @black;
+		text-transform: uppercase;
+		text-align: left;
+		font-size: 22px;
+		margin-bottom: 46px;
+	}
+	.tt-btn-black-border {
+		display: block;
+		border-width: 1px;
+		font-size: 14px;
+		height: 46px;
+		padding-top: 13px;
+		margin: 0;
+	}
+}
+.left-col {
+	form {
+		margin-top: 30px;
+		input:not([type="submit"]) {
+			display: block;
+			width: 100%;
+			max-width: 372px;
+			height: 64px;
+			padding-left: 20px;
+		}
+		input:not([type="submit"]):not(:first-child) {
+			margin-top: 16px;
+		}
+		.lose-psd {
+			display: inline-block;
+			margin-top: 30px;
+		}
+		.btn {
+			width: 86px;
+			margin-top: 54px;
+		}
+	}
+}
+.right-col {
+	padding-left: 15px;
+	.tt-btn-black-border {
+		width: 154px;
+		margin-top: 50px;
+	}
+}
+.border-right {
+	border-right: solid 1px #ededed;
+}
+
+@media only screen and (max-width: 520px) {
+	.my-account-block .boxed .row > div {
+		width: 100%;
+		&:first-child {
+			border: none;
+		}
+	}
+	.left-col {
+		padding-bottom: 0;
+	}
+	.right-col {
+		padding-left: 0;
+	}
+}

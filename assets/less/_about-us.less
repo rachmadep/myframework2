@@ -1,0 +1,231 @@
+.about-us-head {
+	margin: 68px 0 56px;
+}
+.about-us-bl-1 {
+	text-align: center;
+	p:nth-of-type(1) {
+		font-size: 22px;
+		font-weight: lighter;
+	}
+	p:nth-of-type(2) {
+		margin-top: 32px;
+		margin-bottom: 52px;
+	}
+	.baner {
+		margin-top: 22px;
+		margin-bottom: 48px;
+		.baner-block {
+			margin-bottom: 30px;
+			text-align: left;
+			.icon {
+				display: inline-block;
+				font-size: 56px;
+				color: @purple;
+				vertical-align: middle;
+				margin-right: 18px;
+			}
+			.text {
+				display: inline-block;
+				font-size: 28px;
+				color: @black;
+				text-transform: uppercase;
+				vertical-align: middle;
+			}
+			&:hover {
+				.icon-business {
+					-webkit-animation: coins 2s;
+					-moz-animation: coins 2s;
+					-ms-animation: coins 2s;
+					-o-animation: coins 2s;
+					animation: coins 2s;
+					-webkit-animation-iteration-count: infinite;
+					-moz-animation-iteration-count: infinite;
+					-ms-animation-iteration-count: infinite;
+					-o-animation-iteration-count: infinite;
+					animation-iteration-count: infinite;
+				}
+				.icon-earth {
+					-webkit-transform-origin: 49% 49% 0;
+					-moz-transform-origin: 49% 49% 0;
+					-ms-transform-origin: 49% 49% 0;
+					-o-transform-origin: 49% 49% 0;
+					transform-origin: 49% 49% 0;
+					-webkit-animation: earth 3s;
+					-moz-animation: earth 2.4s;
+					-ms-animation: earth 2.4s;
+					-o-animation: earth 2.4s;
+					animation: earth 2.4s;
+					-webkit-animation-iteration-count: infinite;
+					-moz-animation-iteration-count: infinite;
+					-ms-animation-iteration-count: infinite;
+					-o-animation-iteration-count: infinite;
+					animation-iteration-count: infinite;
+				}
+				.icon-help {
+					-webkit-transform-origin: 49% 49% 0;
+					-moz-transform-origin: 49% 49% 0;
+					-ms-transform-origin: 49% 49% 0;
+					-o-transform-origin: 49% 49% 0;
+					transform-origin: 49% 49% 0;
+					-webkit-animation: clock 2s;
+					-moz-animation: clock 2s;
+					-ms-animation: clock 2s;
+					-o-animation: clock 2s;
+					animation: clock 2s;
+					-webkit-animation-iteration-count: infinite;
+					-moz-animation-iteration-count: infinite;
+					-ms-animation-iteration-count: infinite;
+					-o-animation-iteration-count: infinite;
+					animation-iteration-count: infinite;
+				}
+			}
+		}
+	}
+}
+.about-us-bl-2 {
+	position: relative;
+	width: 100%;
+	height: auto;
+	min-height: 548px;
+	padding-bottom: 30px;
+	background-color: transparent;
+	overflow: hidden;
+	img {
+		position: absolute;
+		width: auto;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	.head-text-type1 {
+		display: inline-block;
+		margin-top: 84px;
+		span {
+			color: @white;
+			&::after {
+				border-color: @white;
+			}
+		}
+	}
+	ul.tt-list-center {
+		margin-top: 82px;
+		li span {
+			color: @white;
+		}
+	}
+}
+.about-us-bl-3 {
+	margin-top: 36px;
+	padding-bottom: 80px;
+	.cross_box_shadow(0px, 2px, 4px, -1px, rgba(0, 0, 0, .1));
+	margin-bottom: 40px;
+	.block {
+		margin-top: 40px;
+		.head-text-type2 {
+			text-align: center;
+			margin-bottom: 38px;
+			&:visited {
+				color: @black;
+			}
+			&:hover,
+			&:link,
+			&:active {
+				color: @purple;
+			}
+		}
+		a:nth-child(2) {
+			display: block;
+			width: 100%;
+			height: auto;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+		p {
+			margin-top: 44px;
+			text-align: center;
+			line-height: 1.6;
+		}
+	}
+}
+.about-us-bl-4 {
+	text-align: center;
+	.head-text-type1 {
+		margin-top: 44px;
+	}
+	.boxed > p {
+		display: inline-block;
+		margin-top: 50px;
+		font-size: 22px;
+		font-weight: lighter;
+	}
+	.block {
+		margin-top: 50px;
+		& > a:nth-child(1) {
+			width: 100%;
+			height: auto;
+			border-radius: 50%;
+			background-color: @white;
+		}
+		& > a:nth-child(2) {
+			&:visited {
+				color: @black;
+			}
+			&:hover,
+			&:link,
+			&:active {
+				color: @purple;
+			}
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		.h2 {
+			display: block;
+			margin-top: 36px;
+			margin-bottom: 14px;
+			text-align: center;
+		}
+		.parag-itallic {
+			display: block;
+			text-align: center;
+		}
+		.social {
+			display: inline-block;
+			margin-top: 26px;
+			a {
+				padding-top: 12px;
+				.icon {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.baner {
+		.baner-block {
+			.text {
+				font-size: 20px !important;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 1024px) {
+	.baner {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.about-us-bl-4 {
+		.boxed {
+			.row > div {
+				width: 100%;
+			}
+		}
+	}
+}

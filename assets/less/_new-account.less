@@ -1,0 +1,60 @@
+.new-account-head {
+	margin: 94px 0 60px;
+}
+.new-account {
+	border-top: solid 1px #ededed;
+	.label-text {
+		font-family: @lato;
+		font-weight: bold;
+		font-size: 16px;
+		margin-bottom: 12px;
+	}
+	form {
+		.border-top {
+			border-top: solid 1px #ededed;
+		}
+		& > .row {
+			padding-top: 56px;
+			&:not(:last-child) {
+				padding-bottom: 46px;
+			}
+			& > div {
+				margin-bottom: 18px;
+				input:not(:first-child) {
+					margin-top: 18px;
+				}
+			}
+		}
+		input[type="submit"] {
+			width: 124px;
+			height: 48px;
+			padding: 0;
+			padding-top: 2px;
+			margin-top: 22px;
+			font-size: 14px;
+			box-shadow: none;
+			border: solid 1px @black;
+			text-align: center;
+			background-color: @white;
+			text-transform: uppercase;
+			&:hover {
+				background-color: @black;
+				color: @white;
+			}
+		}
+	}
+	label.tt-checkbox {
+		margin-top: 10px;
+		span:last-child {
+			display: inline-block;
+			font-weight: normal;
+			vertical-align: 4px;
+			margin-left: 14px;
+			cursor: pointer;
+			font-family: @lato;
+			&:hover {
+				color: @purple;
+			}
+		}
+	}
+}

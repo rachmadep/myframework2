@@ -1,0 +1,263 @@
+@charset "utf-8";
+
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:		BuyNow
+Version:		1.1
+Last change:	03/10/16 
+Assigned to:	TonyTemplates
+Primary use:	Magazine
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Layout]
+
+* body
+	1. Header / header
+		1.1. Options header (mobile) / .options-mobile-head
+		1.2. Menu options (mobile) / .options-menu
+			- Languages / .languages
+			- Valute / .valute
+			- User / .user
+		1.3. Topbar / .topbar
+			- Navigation (desktop) / nav.navigation-block
+			- Sidebar / aside.topbar-sidebar
+				-  Menu options (desktop) / .sidebar-more-opt-bl
+					- Languages / .option-block-1
+					- Valute / .option-block-2
+					- User / .option-block-3
+				- Search / .search-block (desktop)
+		1.4. Basket / .basket
+		1.5. Topbar (mobile) / .topbar-mobile
+			- search (mobile) / .search
+		1.6. Navigation (mobile) / .mobile-menu .navigation-block
+	2. Content / main
+		2.0. Breadcrumbs / .breadcrumbs
+			- Navigation / .navigation-btn
+		2.1. index.html (_main.scss)
+			- Revolution Slider / .rev_slider_wrapper
+			- Small baner / .baner-1
+			- Images baner / .baner-2
+			- Btns product navigation / .product-navigation.tt-menu-type1
+			- Main product offers / .products-wrapper .isotope
+				- Product / .product
+			- Shop the look / .baner-3
+			- Blog / .blog
+			- Brands / .brand-carousel
+			- Fullwidth image baner / .baner-4
+			- Newsletter modal / .newsletter-modal
+		2.2. product.html (_product.scss)
+			- Product / .product-block
+				- Images block / .image-block
+					- Main images / .main-block
+					- Preview images / .preview-block
+				- Information block / .info-block
+			- Offers / .offers
+				- Product / .product
+		2.3. listing.html (_listing.scss)
+			- Listing / .listing
+				- Header baner / .head-baner
+				- Top settings / .control
+				- Content section / .products-wrapper
+					- Product / .product
+				- Left sidebar (filter) / .listing-sidebar
+					- Selected filter / .select-categoty
+					- Category / .listing-category
+					- Color / .color-section
+					- Size / .size-section
+					- Price / .price-section
+					- Compare / .compare-section
+					- Tags / .tt-tags
+					- Sale / .sale-block
+					- Baner / .footer-baner
+		2.4. shopping_cart.html (_shopping-cart.scss)
+			- Shopping cart / .shopping-cart
+				- Shopping product / .shopping-product
+				- Form / form
+		2.5. new_account.html (_new-account.scss)
+			- New account / .new-account
+				- Form / form
+		2.6. my_account.html (_my-account.scss)
+			- My account / .my-account-block
+				- Form / form
+		2.7. gallery.html (_gallery.scss)
+			- Gallery navigation / .gallery-navigation
+			- Gallery / .gallery
+				- Item / .grid-item
+		2.8. contacts.html (_contacts.scss)
+			- Contacts / .contacts
+			- Form / form
+		2.9. wishlist.html (_wishlist.scss)
+			- Wishlist / .wishlist
+		2.10. compare.html (_compare.scss)
+			- Compare / .compare
+				- Product row / .product-row
+				- Information row / .info-row
+		2.11. checkout.html (_checkout.scss)
+			- Checkout / .checkout
+				- Form / form
+		2.12. blog_posts.html (_blog-posts.scss)
+			- Blog Post v1 / .blog-posts
+				- Blog carousel / .blog
+					- Post / .blog-box
+		2.13. blog_posts2.html (_blog_posts2.scss)
+			- Blog Post v2 / .blog-posts2
+				- Post / .make-post
+				- Right sidebar / .blog-sidebar
+		2.14. blog_post_single.html (_blog-posts-single.scss)
+			- Blog Posts Single / .blog-posts-single
+				- Post / .make-post
+				- Right sidebar / .blog-sidebar
+		2.15. sitemap.html (_sitemap.scss)
+			- Sitemap / .sitemap
+		2.16. typography.html (_typography.scss)
+			- Headers / .headings
+			- Paragraphs / .paragraphs
+			- Dropcaps / .dropcaps
+			- List / .listing-block
+			- Helper classes / .helper-classes
+			- Block Quote / .block-quote-wrapp
+			- Textimonials / .textimonials-wrapp
+			- Information blocks / .info-block-wrapp
+			- Tables / .tables-wrapp
+			- Grid / .test-grid
+		2.17. about_us.html (_about-us.scss)
+			- About us section / .about-us-bl-1, about-us-bl-2, about-us-bl-3
+		2.18. 404.html (_error.scss)
+			- Page 404 / .error
+	- Quick view modal / .quick-view-modal
+	3. Footer / footer
+		3.1. Popups
+			- Hidden blocks / .hidden-block
+		3.2. Payment Methods / .lower-block
+		3.3. Top button / .to-top
+			
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Color codes]
+
+Background:				#ffffff (white)
+Content:				#000000 (black)
+Main color: 			#9d3bc6 (purple)
+Complementary color #1:	#ff0048 (red)
+Complementary color #2: #ababab (gray)
+
+a (standard):			#000000 (black)
+a (hover):				#9d3bc6 (purple)
+a (visited):			#000000 (black)
+a (active):				#000000 (black)
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Typography]
+
+Body copy:			14px 'Oswald', sans-serif; 'Lato', sans-serif;
+Headers:			14px 'Oswald', sans-serif;
+Input, textarea:	16px 'Lato', sans-serif;
+
+-------------------------------------------------------------------*/
+
+
+
+//color
+@purple: #9d3bc6;
+@red: #ff0048;
+@white: #ffffff;
+@black: #000000;
+
+//fonts
+@oswald: 'Oswald', sans-serif;
+@lato: 'Lato', sans-serif;
+@buyshop: 'Buyshop';
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	background-color: @white;
+	font-family: @oswald;
+	font-size: 14px;
+	color: @black;
+	-ms-overflow-style: scrollbar;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+ul {
+	display: block;
+	list-style: none;
+	padding: 0;
+}
+
+a {
+	color: @black;
+	&:hover,
+	&:active {
+		text-decoration: none;
+	}
+	&:link,
+	&:visited,
+	&:active {
+		color: @black;
+		text-decoration: none;
+	}
+	&:hover {
+		color: @purple;
+	}
+}
+
+.boxed {
+	position: relative;
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+
+body.modal-open {
+	overflow: inherit !important;
+	padding: 0 !important;
+}
+
+.fancybox-overlay, 
+.fancybox-lock {
+	margin: 0 !important;
+	overflow: inherit !important;
+}
+html.fancybox-lock {
+	overflow: auto !important;
+}
+
+@import '_mixin';
+@import '_custom-blocks';
+@import '_header';
+@import '_footer';
+@import '_product-block';
+@import '_main';
+@import '_product';
+@import '_listing';
+@import '_typography';
+@import '_blog-posts';
+@import '_blog-posts2';
+@import '_blog-posts-single';
+@import '_my-account';
+@import '_new-account';
+@import '_about-us';
+@import '_sitemap';
+@import '_wishlist';
+@import '_shopping-cart';
+@import '_gallery';
+@import '_checkout';
+@import '_contacts';
+@import '_compare';
+@import '_error'; 
