@@ -24,7 +24,8 @@ switch($action) {
 
   case "add":
     $dataOrders = mysqli_query($koneksi, "SELECT * FROM tbl_order WHERE id_pelanggan='$pelanggan_id' AND id_produk='$product_id'");
-    if ($dataOrders) {
+    $result = mysqli_num_rows($dataOrders);
+    if ($result > 0) {
       // echo "<script> alert('Data sudah ada');</script>";
       $dataOrder = mysqli_fetch_array($dataOrders);
       $jumlah = $dataOrder['jumlah'];
@@ -34,6 +35,12 @@ switch($action) {
       // echo "<script> alert('Data belum ada');</script>";
       $querySimpan = mysqli_query($koneksi, "INSERT INTO tbl_order (id_pelanggan, id_produk, jumlah, tanggal) VALUES ('$pelanggan_id', '$product_id', '$jumlah', '$tanggal')");
     };
+    // if ($dataOrders) {
+  	// 	echo "<script> alert('Data Produk Berhasil Masuk');</script>";
+  	// 	// jika query gagal, akan tampil alert dan halaman akan diarahkan ke form tambah kategori
+  	// } else {
+  	// 	echo "<script> alert('Data Produk Gagal Dimasukkan');</script>";
+  	// }
     echo "<script> window.location = '$web_url'+'shopping_cart.php';</script>";
     // header("location:shopping_cart.php");
   break;
@@ -71,9 +78,13 @@ switch($action) {
   break;
 
   case "remove":
-  $_SESSION['cart'][$product_id]--;
-  if($_SESSION['cart'][$product_id] == 0)
-  unset($_SESSION['cart'][$product_id]);
+    $deleteOrder = mysqli_query($koneksi, "DELETE FROM tbl_order WHERE id_pelanggan='$pelanggan_id' AND id_produk='$product_id'");
+    echo "<script> window.location = '$web_url'+'shopping_cart.php';</script>";
+  break;
+
+  case "remove_all":
+    $deleteOrder = mysqli_query($koneksi, "DELETE FROM tbl_order WHERE id_pelanggan='$pelanggan_id'");
+    echo "<script> window.location = '$web_url'+'shopping_cart.php';</script>";
   break;
 }
 

@@ -498,7 +498,7 @@ if(isset($_SESSION['nama'])){
               foreach ($products as $product) {
                 echo "
                 <div class='col-md-3 col-sm-3 col-xs-12 tt-col'>
-                    <div class='product right-hover' data-product-id='9'>
+                    <div class='product right-hover' data-product-id='".$product['id_produk']."'>
                         <div class=''></div>
                         <div class='product-main-inside'>
                             <div class='product-image-block'>
@@ -518,7 +518,7 @@ if(isset($_SESSION['nama'])){
                                 <div class='row'>
                                     <div class='col-left'>
                                         <div class='product-description'>
-                                            <a href='#'>".$product['nama_produk']."</a>
+                                            <a href='".$web_url."produk.php?id=".$product['id_produk']."'>".$product['nama_produk']."</a>
                                         </div>
                                         <a href='update-cart.php?action=add&id=".$product['id_produk']."' class='product-button-add icon-add'></a>
                                         <p class='price'>
@@ -1641,7 +1641,7 @@ if(isset($_SESSION['nama'])){
                         <div class="clearfix"></div>
                         <p class="price">
                             <span class="special-price">$185.22</span>
-                            <span class="old-price">$199.95</span>
+                            <span class="old-price">$1a99.95</span>
                         </p>
                         <div class="clearfix"></div>
                         <p class="description">Maade with the perfect blend of cotton and cashmere, this v-neck sweater is sharp and stylish. Wear it on its own or as a warm layer over t-shirts and button-ups.</p>

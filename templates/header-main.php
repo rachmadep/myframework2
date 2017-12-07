@@ -114,7 +114,7 @@
                     <div class="row">
                         <div class="col-lg-2 col-md-2">
                             <div class="topbar-logo">
-                               <a href="index.html">
+                               <a href="index.php">
                                    <img src="assets/images/logo.png" alt="Logo"/>
                                </a>
                            </div>

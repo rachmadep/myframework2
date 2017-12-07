@@ -60,7 +60,7 @@ $orders = mysqli_query($koneksi, "SELECT * FROM tbl_order INNER JOIN tbl_pelangg
                                         <div class="row">
                                             <div class="col-md-5 col-sm-5 col-xs-5">
                                                 <a href="#" class="image">
-                                                    <img src="images/product/shopping_cart/11_1.jpg" alt="photo"/>
+                                                    <img src="<?php echo $web_url; ?>file/produk/<?php echo $order['gambar']; ?>" alt="photo"/>
                                                 </a>
                                             </div>
                                             <div class="col-md-7 col-sm-7 col-xs-7">
@@ -104,7 +104,7 @@ $orders = mysqli_query($koneksi, "SELECT * FROM tbl_order INNER JOIN tbl_pelangg
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                     <a href="#" class="icon icon-cog"></a>
-                                    <a href="#" class="icon icon-trash"></a>
+                                    <a href="<?php echo $web_url ?>update-cart.php?action=remove&id=<?php echo $order['id_produk'];?>" class="icon icon-trash"></a>
                                 </div>
                             </div>
                         </div>
@@ -112,12 +112,12 @@ $orders = mysqli_query($koneksi, "SELECT * FROM tbl_order INNER JOIN tbl_pelangg
 
                         <div class="row btns-row">
                             <div class="col-md-8 col-sm-8">
-                                <a href="#" class="tt-btn-type1 tt-btn-cart-head">continus shopping</a>
-                                <a href="#" class="tt-btn-type1 tt-btn-cart-head">clear all</a>
+                                <a href="<?php echo $web_url ?>" class="tt-btn-type1 tt-btn-cart-head">continus shopping</a>
+                                <a href="<?php echo $web_url ?>update-cart.php?action=remove_all&id=<?php echo $order['id_produk'];?>" class="tt-btn-type1 tt-btn-cart-head">clear all</a>
                             </div>
-                            <div class="col-md-4 col-sm-4">
+                            <!-- <div class="col-md-4 col-sm-4">
                                 <a href="#" class="tt-btn-type1 tt-btn-cart-head">update cart</a>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-4">
