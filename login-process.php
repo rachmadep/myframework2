@@ -12,7 +12,7 @@ $result = mysqli_num_rows($login);
 if($result>0){
   $user = mysqli_fetch_array($login);
   session_start();
-  $_SESSION['nama'] = $user['nama'];
+  $_SESSION['nama'] = $user['nama_pelanggan'];
 
   header("location:index.php");
 }

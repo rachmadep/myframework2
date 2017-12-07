@@ -3,14 +3,14 @@ session_start();
 if (empty($_SESSION['username']) AND empty($_SESSION['level'])) {
     echo "<center>Untuk mengakses halaman, Anda harus login <br>";
     echo "<a href=../index.php><b>LOGIN</b></a></center>";
-} else { 
+} else {
 include "../../lib/config_web.php";
 include "../../lib/koneksi.php";
 
 $id_produk = $_GET['id_produk'];
 $query = mysqli_query($koneksi, "SELECT * FROM tbl_produk WHERE id_produk='$id_produk'");
 
-$dataProduk = mysqli_fetch_array($query); 
+$dataProduk = mysqli_fetch_array($query);
 
 include "../templates/header.php"; ?>
 
@@ -29,7 +29,7 @@ include "../templates/header.php"; ?>
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Form Tambah <small>data produk</small></h2>
-  
+
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -41,7 +41,7 @@ include "../templates/header.php"; ?>
                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Nama Kategori <span class="required"></span>
                         </label>
                         <div class="col-md-10 col-sm-10 col-xs-12">
-                       
+
 						  <select class="form-control col-md-7 col-xs-12" name="nama_kategori">
 						  <?php
 						  $query = mysqli_query($koneksi, "SELECT * FROM tbl_kategori");

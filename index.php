@@ -4,6 +4,17 @@ session_start();
 include "templates/header-main.php";
 include "lib/koneksi.php";
 include "lib/config_web.php";
+
+if(isset($_SESSION['nama'])){
+  $nama = $_SESSION['nama'];
+  $users = mysqli_query($koneksi, "SELECT * FROM tbl_pelanggan WHERE nama_pelanggan='$nama'");
+  // if($users){
+  //   while($user = $users->fetch_object()) {
+  //     echo $user->id;
+  //   }
+  // };
+};
+
  ?>
 
 <main>
@@ -481,6 +492,7 @@ include "lib/config_web.php";
     <div class="container-fluid boxed none-padding-small">
         <div class="baner-3">
             <div class="row baner-3-carousel products-wrapper product-grid">
+
               <?php
               $products = mysqli_query($koneksi, "SELECT * FROM tbl_produk ORDER BY id_produk DESC LIMIT 4");
               foreach ($products as $product) {
@@ -490,7 +502,10 @@ include "lib/config_web.php";
                         <div class=''></div>
                         <div class='product-main-inside'>
                             <div class='product-image-block'>
-                                <img src='file/produk/".$product['gambar']."' alt='product'/>
+                                <a href='".$web_url."produk.php?id=".$product['id_produk']."'>
+                                  <img src='file/produk/".$product['gambar']."' alt='product'/>
+                                </a>
+
                                 <div class='button-open'>
                                     <span class='icon-open icon'></span>
                                 </div>

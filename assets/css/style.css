@@ -4,7 +4,7 @@
 
 Project:		BuyNow
 Version:		1.1
-Last change:	03/10/16 
+Last change:	03/10/16
 Assigned to:	TonyTemplates
 Primary use:	Magazine
 -------------------------------------------------------------------*/
@@ -130,7 +130,7 @@ Primary use:	Magazine
 			- Hidden blocks / .hidden-block
 		3.2. Payment Methods / .lower-block
 		3.3. Top button / .to-top
-			
+
 -------------------------------------------------------------------*/
 /*------------------------------------------------------------------
 [Color codes]
@@ -806,7 +806,7 @@ ul.tt-list-center li span::before {
   outline-color: #9d3bc6;
 }
 .settings .count.only-output {
-  width: 60px;
+  width: 95px;
 }
 .settings .count.only-output .output {
   width: 100%;
@@ -9173,7 +9173,7 @@ ul.tt-list ul.tree li:first-child::after {
   margin-top: 22px;
 }
 .shopping-cart .shopping-product .settings .count-product {
-  display: inline-block;
+  display: inline-flex;
   float: none;
   margin: 0;
 }
