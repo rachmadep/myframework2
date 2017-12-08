@@ -127,64 +127,9 @@
                                         <li class="simplemenu-item"><a href="#" class="label-ellipsis">Kategori</a>
                                             <div class="simplemenu">
                                                 <ul>
+                                                  
                                                     <li>
                                                         <a href="">new in</a>
-                                                    </li>
-                                                    <li class="icon">
-                                                        <a href="">clothes</a>
-                                                        <div class="simplemenu-inside">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="">t-shirts & vests</a>
-                                                                </li>
-                                                                <li class="icon">
-                                                                    <a href="">shorts</a>
-                                                                    <div class="simplemenu-inside">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="">denim shorts</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="">smart shorts</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="">shino shorts</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="">casual shorts</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="">swim shorts</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="">multibuy shorts</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">polo shirts</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">swimwear</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">hoodies</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">track pants</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">track tops</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">track suits</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">shirts</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
                                                     </li>
                                                     <li>
                                                         <a href="">suit shop</a>
@@ -192,47 +137,7 @@
                                                     <li>
                                                         <a href="">underwear & leisurewear</a>
                                                     </li>
-                                                    <li>
-                                                        <a href="">shoes</a>
-                                                    </li>
-                                                    <li class="icon">
-                                                        <a href="">accessories</a>
-                                                        <div class="simplemenu-inside">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="">category #1</a>
-                                                                </li>
-                                                                <li class="icon">
-                                                                    <a href="">category #2</a>
-                                                                    <div class="simplemenu-inside">
-                                                                        <ul>
-                                                                            <li>
-                                                                                <a href="">category #1</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="">category #2</a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="">category #3</a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">category #3</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="">category #4</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">sport</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">offers</a>
-                                                    </li>
+
                                                 </ul>
                                             </div>
                                         </li>
@@ -380,7 +285,7 @@
                                                </div>
                                            </div>
                                         </li>
-                                        <li class="simplemenu-item"><a href="#">blog</a>
+                                        <!-- <li class="simplemenu-item"><a href="#">blog</a> -->
                                             <div class="simplemenu">
                                                 <ul>
                                                     <li>
@@ -439,7 +344,7 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li class="simplemenu-item"><a href="index.html">Pages</a>
+                                        <!-- <li class="simplemenu-item"><a href="index.html">Pages</a> -->
                                             <div class="simplemenu">
                                                 <ul>
                                                     <li class="icon">
@@ -527,7 +432,12 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="#" class="label-hot">download now</a></li>
+                                        <?php if(isset($_SESSION['nama'])){ ?>
+                                          <li class="simplemenu-item"><a href="myorder.php">Pesanan Saya</a></li>
+                                        <?php } else {?>
+                                          <li class="simplemenu-item"><a href="login.php">Login</a></li>
+                                        <?php } ?>
+                                        <li class="simplemenu-item"><a href="kontak.php">Kontak</a></li>
                                    </ul>
                                </nav>
                            </div>

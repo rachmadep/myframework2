@@ -153,7 +153,13 @@ Body copy:			14px 'Oswald', sans-serif; 'Lato', sans-serif;
 Headers:			14px 'Oswald', sans-serif;
 Input, textarea:	16px 'Lato', sans-serif;
 
+
 -------------------------------------------------------------------*/
+.invoice-summary{
+  float: right;
+  margin-right: 35px;
+}
+@media print{@page {size: landscape}}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -9046,7 +9052,7 @@ ul.tt-list ul.tree li:first-child::after {
   margin-right: 16px;
 }
 .shopping-cart > .row:first-child > div:nth-child(2),
-.shopping-cart > .row:first-child > div:nth-child(3) {
+.shopping-cart > .row:first-child > div:nth-child(5) {
   text-align: center;
 }
 .shopping-cart > .row:first-child .col-name {
@@ -9158,7 +9164,7 @@ ul.tt-list ul.tree li:first-child::after {
 .shopping-cart .shopping-product > div:nth-child(5) .tt-price {
   float: right;
 }
-.shopping-cart .shopping-product > div:nth-child(5) .icon {
+.shopping-cart .shopping-product > div:nth-child(6) .icon {
   display: inline-block;
   margin-top: 38px;
   margin-right: 24px;
