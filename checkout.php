@@ -54,6 +54,7 @@ if(isset($_SESSION['nama'])){
                                 </span>
                             </div>
                         </div>
+                        <form action="create-invoice.php" method="post">
                             <div class="block-1">
                                 <span class="head-text-type2">Alamat Tujuan</span>
                                 <input type="alamat" class="tt-input" name="alamat" placeholder="Alamat" required="required" value="<?php echo $user['alamat'] ?>">
@@ -111,6 +112,7 @@ if(isset($_SESSION['nama'])){
                                         </span>
                                     </label>
                                 </div>
+                                <input type="submit" class="tt-btn-type1 tt-btn-wishlist" value="Create Invoice">
                             </div>
                         </form>
                     </div>

@@ -18,7 +18,7 @@ $action = $_GET['action'];
 // $products = mysqli_query($koneksi, "SELECT * FROM tbl_produk WHERE id_produk='$product_id'");
 
 $jumlah = 1;
-$tanggal = date('m/d/Y');
+$tanggal = date('d/m/Y');
 
 switch($action) {
 
@@ -35,12 +35,6 @@ switch($action) {
       // echo "<script> alert('Data belum ada');</script>";
       $querySimpan = mysqli_query($koneksi, "INSERT INTO tbl_order (id_pelanggan, id_produk, jumlah, tanggal) VALUES ('$pelanggan_id', '$product_id', '$jumlah', '$tanggal')");
     };
-    // if ($dataOrders) {
-  	// 	echo "<script> alert('Data Produk Berhasil Masuk');</script>";
-  	// 	// jika query gagal, akan tampil alert dan halaman akan diarahkan ke form tambah kategori
-  	// } else {
-  	// 	echo "<script> alert('Data Produk Gagal Dimasukkan');</script>";
-  	// }
     echo "<script> window.location = '$web_url'+'shopping_cart.php';</script>";
     // header("location:shopping_cart.php");
   break;
