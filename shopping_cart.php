@@ -115,36 +115,11 @@ $orders = mysqli_query($koneksi, "SELECT * FROM tbl_order INNER JOIN tbl_pelangg
                                 <a href="<?php echo $web_url ?>" class="tt-btn-type1 tt-btn-cart-head">continus shopping</a>
                                 <a href="<?php echo $web_url ?>update-cart.php?action=remove_all&id=<?php echo $order['id_produk'];?>" class="tt-btn-type1 tt-btn-cart-head">clear all</a>
                             </div>
-                            <!-- <div class="col-md-4 col-sm-4">
-                                <a href="#" class="tt-btn-type1 tt-btn-cart-head">update cart</a>
-                            </div> -->
+                            <div class="col-md-4 col-sm-4">
+                                <a href="<?php echo $web_url ?>checkout.php" class="tt-btn-type1 tt-btn-cart-head">proceed to checkout</a>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <span class="head-text-type2">estimate shipping and tax</span>
-                                <select class="form-control">
-                                    <option>United States</option>
-                                    <option>United States</option>
-                                    <option>United States</option>
-                                    <option>United States</option>
-                                    <option>United States</option>
-                                </select>
-                                <select class="form-control">
-                                    <option>Please select region, state or province</option>
-                                    <option>Please select region, state or province</option>
-                                    <option>Please select region, state or province</option>
-                                    <option>Please select region, state or province</option>
-                                    <option>Please select region, state or province</option>
-                                </select>
-                                <input type="text" class="tt-input" placeholder="Zip / Postal code">
-                                <a href="#" class="tt-btn-type1">get quote</a>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <span class="head-text-type2">discount codes</span>
-                                <p>Enter your coupon code if you have one.</p>
-                                <input type="text" class="tt-input">
-                                <a href="#" class="tt-btn-type1">apply coupon</a>
-                            </div>
+                        <!-- <div class="row">
                             <div class="col-md-4 col-sm-4">
                                 <div class="curtain">
                                     <div class="row">
@@ -165,7 +140,7 @@ $orders = mysqli_query($koneksi, "SELECT * FROM tbl_order INNER JOIN tbl_pelangg
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

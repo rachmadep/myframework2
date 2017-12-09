@@ -33,5 +33,7 @@ foreach ($orders as $order) {
   $jumlah_produk = $order['jumlah'];
   mysqli_query($koneksi, "INSERT INTO tbl_invoice_produk (invoice_id, produk_id, jumlah_produk) VALUES ('$invoice_id', '$produk_id', '$jumlah_produk')");
 };
+
+$deleteOrder = mysqli_query($koneksi, "DELETE FROM tbl_order WHERE id_pelanggan='$pelanggan_id'");
 echo "<script> window.location = '$web_url'+'invoice.php?id='+'$invoice_id';</script>";
  ?>

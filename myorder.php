@@ -12,9 +12,12 @@ if(isset($_SESSION['nama'])){
   }
 };
 $invoices = mysqli_query($koneksi, "SELECT * FROM tbl_invoice WHERE id_pelanggan='$pelanggan_id'");
-// $invoice = mysqli_fetch_array($invoices);
+$invoice = mysqli_fetch_array($invoices);
+$invoice_id = $invoice['id'];
 $orders = mysqli_query($koneksi, "SELECT * FROM tbl_order INNER JOIN tbl_pelanggan ON tbl_order.id_pelanggan = tbl_pelanggan.id INNER JOIN tbl_produk ON tbl_order.id_produk = tbl_produk.id_produk WHERE id_pelanggan='$pelanggan_id'");
 $order = mysqli_fetch_array($orders);
+
+
  ?>
 
         <main>
@@ -78,12 +81,15 @@ $order = mysqli_fetch_array($orders);
                                             <div class="col-md-7 col-sm-7 col-xs-7">
                                                 <div class="info">
                                                   <ul>
-                                                    <?php foreach ($producs as $produc) {
+                                                    <?php
+                                                    $invoice_ids = $invoice['id'];
+                                                    $products = mysqli_query($koneksi, "SELECT * FROM tbl_invoice_produk INNER JOIN tbl_invoice ON tbl_invoice_produk.invoice_id = tbl_invoice.id INNER JOIN tbl_produk ON tbl_invoice_produk.produk_id = tbl_produk.id_produk WHERE invoice_id='$invoice_ids'");
+                                                    foreach ($products as $product) {
                                                      ?>
                                                     <li>
-                                                      <a href="#" class="text-1"><?php echo $produc['nama_produk']; ?></a>
+                                                      <a href="#" class="text-1"><?php echo $product['nama_produk']; ?></a>
                                                     </li>
-                                                    <?php } ?>
+                                                  <?php }; ?>
                                                   </ul>
                                                 </div>
                                             </div>
@@ -107,69 +113,73 @@ $order = mysqli_fetch_array($orders);
                                 </div>
 
                                 <div class="col-md-2 col-sm-2 col-xs-12">
-                                    <a href="#" class="icon icon-cog"></a>
-                                    <a href="<?php echo $web_url ?>update-cart.php?action=remove&id=<?php echo $order['id_produk'];?>" class="icon icon-trash"></a>
+
+                                  <a href="<?php echo $web_url ?>invoice.php?id=<?php echo $invoice['id']; ?>">
+                                  <button class="btn btn-default">
+                                     Lihat Invoice
+                                  </button>
+                                  </a><br>
+                                  <!-- Button trigger modal -->
+                                  <button class="btn btn-default" data-toggle="modal" data-target="#myModalNorm<?php echo $invoice['id']; ?>">
+                                      Upload Bukti Pembayaran
+                                  </button>
                                 </div>
                             </div>
                         </div>
-                  <?php } ?>
 
-                        <div class="row btns-row">
-                            <div class="col-md-8 col-sm-8">
-                                <a href="<?php echo $web_url ?>" class="tt-btn-type1 tt-btn-cart-head">continus shopping</a>
-                                <a href="<?php echo $web_url ?>update-cart.php?action=remove_all&id=<?php echo $order['id_produk'];?>" class="tt-btn-type1 tt-btn-cart-head">clear all</a>
-                            </div>
-                            <!-- <div class="col-md-4 col-sm-4">
-                                <a href="#" class="tt-btn-type1 tt-btn-cart-head">update cart</a>
-                            </div> -->
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <span class="head-text-type2">estimate shipping and tax</span>
-                                <select class="form-control">
-                                    <option>United States</option>
-                                    <option>United States</option>
-                                    <option>United States</option>
-                                    <option>United States</option>
-                                    <option>United States</option>
-                                </select>
-                                <select class="form-control">
-                                    <option>Please select region, state or province</option>
-                                    <option>Please select region, state or province</option>
-                                    <option>Please select region, state or province</option>
-                                    <option>Please select region, state or province</option>
-                                    <option>Please select region, state or province</option>
-                                </select>
-                                <input type="text" class="tt-input" placeholder="Zip / Postal code">
-                                <a href="#" class="tt-btn-type1">get quote</a>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <span class="head-text-type2">discount codes</span>
-                                <p>Enter your coupon code if you have one.</p>
-                                <input type="text" class="tt-input">
-                                <a href="#" class="tt-btn-type1">apply coupon</a>
-                            </div>
-                            <div class="col-md-4 col-sm-4">
-                                <div class="curtain">
-                                    <div class="row">
-                                        <div class="col-md-7 col-sm-4 col-sm-offset-1 col-md-offset-0 col-xs-6">
-                                            <span class="h3">subtotal</span>
-                                            <span class="h3">discount</span>
-                                            <span class="h1">grand total</span>
-                                        </div>
-                                        <div class="col-md-5 col-sm-7 col-xs-6">
-                                            <span class="h3">$199.95</span>
-                                            <span class="h3">-$11.60</span>
-                                            <span class="h1">$188.35</span>
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <a href="#" class="tt-btn-type1">proceed to checkout</a>
-                                            <a href="#">Checkout with Multiple Addresses</a>
-                                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModalNorm<?php echo $invoice['id']; ?>" tabindex="-1" role="dialog"
+                             aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <button type="button" class="close"
+                                           data-dismiss="modal">
+                                               <span aria-hidden="true">&times;</span>
+                                               <span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">
+                                            Modal title
+                                        </h4>
+                                    </div>
+
+                                    <!-- Modal Body -->
+                                    <div class="modal-body">
+                                      <div class="container">
+                                        <form action="upload.php?id=<?php echo $invoice['id']; ?>" method="post" enctype="multipart/form-data">
+                                            Select image to upload:
+                                            <input type="file" name="fileToUpload" id="fileToUpload" class="btn btn-default" >
+                                            <input type="submit" class="btn btn-default" value="Upload Image" name="submit">
+                                        </form>
+                                      </div>
+                                    </div>
+
+                                    <!-- Modal Footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">
+                                                    Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">
+                                            Save changes
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                  <?php } ?>
+
+                        <div class="row btns-row">
+                            <div class="col-md-8 col-sm-8">
+                              <ul>
+                                <li><a href="<?php echo $web_url ?>" class="tt-btn-type1 tt-btn-cart-head">continus shopping</a></li>
+                                <li><a href="<?php echo $web_url ?>update-cart.php?action=remove_all&id=<?php echo $order['id_produk'];?>" class="tt-btn-type1 tt-btn-cart-head">clear all</a></li>
+                              </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
