@@ -127,16 +127,19 @@
                                         <li class="simplemenu-item"><a href="#" class="label-ellipsis">Kategori</a>
                                             <div class="simplemenu">
                                                 <ul>
-                                                  
+                                                  <?php
+                                                  include "lib/koneksi.php";
+                                                  include "lib/config_web.php";
+                                                  $kategoris = mysqli_query($koneksi, "SELECT * FROM tbl_kategori");
+                                                  foreach ($kategoris as $kategori) {
+                                                    # code...
+
+                                                   ?>
                                                     <li>
-                                                        <a href="">new in</a>
+                                                        <a href="produk-list.php?id=<?php echo $kategori['id_kategori']; ?>"><?php echo $kategori['nama_kategori']; ?></a>
                                                     </li>
-                                                    <li>
-                                                        <a href="">suit shop</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="">underwear & leisurewear</a>
-                                                    </li>
+                                                    <?php
+                                                    } ?>
 
                                                 </ul>
                                             </div>
