@@ -11,6 +11,10 @@ if(isset($_SESSION['nama'])){
   foreach ($users as $user) {
     $pelanggan_id = $user['id'];
   }
+}else {
+  # code...
+  echo "<script> alert('Anda belum Login');</script>";
+  echo "<script> window.location = '$web_url'+'login.php';</script>";
 };
 
 $product_id = $_GET['id'];
