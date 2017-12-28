@@ -22,7 +22,8 @@ foreach ($orders as $order) {
 $tanggal = date('d/m/Y');
 $batas_tanggal = date('d/m/Y', strtotime("+2 days"));
 $status = 'Belum Dibayar';
-$querySimpan = mysqli_query($koneksi, "INSERT INTO tbl_invoice (id_pelanggan, total, tanggal, batas_tanggal, status) VALUES ('$pelanggan_id', '$total', '$tanggal', '$batas_tanggal', '$status')");
+$pengiriman = 'Belum Dikirim';
+$querySimpan = mysqli_query($koneksi, "INSERT INTO tbl_invoice (id_pelanggan, total, tanggal, batas_tanggal, status, pengiriman) VALUES ('$pelanggan_id', '$total', '$tanggal', '$batas_tanggal', '$status', '$pengiriman')");
 
 $invoices = mysqli_query($koneksi, "SELECT * FROM tbl_invoice WHERE id_pelanggan='$pelanggan_id' AND total='$total' AND tanggal='$tanggal'");
 $invoice = mysqli_fetch_array($invoices);
