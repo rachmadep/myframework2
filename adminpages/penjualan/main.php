@@ -23,11 +23,17 @@ if (isset($_GET['perPage']) && !empty($_GET['perPage']))
 	$dataPerPage = (int)$_GET['perPage'];
 
 // tabel yang akan diambil datanya
-$table = 'tbl_penjualan';
+$table = 'tbl_invoice';
 
 // ambil data
 // $dataTable = getTableData($koneksi, $table, $page, $dataPerPage);
-$dataTable = mysqli_query($koneksi, "SELECT * FROM tbl_penjualan INNER JOIN tbl_produk ON tbl_penjualan.id_produk = tbl_produk.id_produk INNER JOIN tbl_kategori ON tbl_produk.id_kategori = tbl_kategori.id_kategori");
+$dataTable = mysqli_query($koneksi,
+"SELECT nama_kategori, nama_produk, SUM(jumlah_produk) as jumlah
+FROM tbl_invoice 
+INNER JOIN tbl_invoice_produk ON tbl_invoice.id = tbl_invoice_produk.invoice_id
+INNER JOIN tbl_produk ON tbl_invoice_produk.produk_id = tbl_produk.id_produk
+INNER JOIN tbl_kategori ON tbl_produk.id_kategori = tbl_kategori.id_kategori
+WHERE tbl_invoice.status = 'Sudah Dibayar' GROUP BY nama_produk");
 
 include "../templates/header.php";
 ?>
@@ -87,7 +93,7 @@ include "../templates/header.php";
 								<th scope="row"><?php echo $no; ?></th>
 								<td><?php echo $data['nama_kategori'];?></td>
 								<td><?php echo $data['nama_produk'];?></td>
-								<td><?php echo $data['jumlah_penjualan'];?></td>
+								<td><?php echo $data['jumlah'];?></td>
 								<td><a href="<?php echo $admin_url; ?>penjualan/form_edit.php?id_penjualan=<?php echo $data['id_penjualan'];?>">
 								<button class="btn btn-warning">
 									<i class="fa fa-edit"></i>
